@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #24252a;
+    color: #edf0f1;
+    font-family: 'Montserrat', sans-serif;
+}
+
+li,
+a,
+button {
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 30px 15px 30px;
+    height: 145px;
+}
+
+.logo {
+    cursor: pointer;
+    margin-right: auto;
+    width: 100px;
+    height: 100px;
+}
+
+.nav_links {
+    list-style: none;
+}
+
+.nav_links li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav_links li a {
+    transition: all 0.3s ease 0s;
+}
+
+.nav_links li a:hover {
+    color: #0088a9;
+}
+
+button {
+    padding: 9px 25px;
+    background-color: rgba(0, 136, 169, 1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+button:hover {
+    background-color: rgba(0, 136, 169, 0.8);
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    padding: 15px 30px 15px 30px;
+}
+
+div.left_content {
+    height: calc(100vh - 290px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    padding-right: 15px;
+}
+
+.left_content img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+div.right_content {
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    flex-direction: column;
+    width: 50vw;
+    padding-left: 15px;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    padding: 15px 30px 0px 30px;
+    height: 115px;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+}
+
+h1 {
+    line-height: 1.5;
+}
+
+small {
+    font-weight: 100;
+}
+
+p {
+    line-height: 1.2;
+    font-weight: 400;
+    margin-bottom: 1.5em;
+}
+
+strong {
+    font-weight: 800;
+}
+
+address {
+    font-style: normal;
+}
+
+address.tel_mail {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 6px;
+}
+
+address div.contact_icons,
+address div.contact_info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+}
