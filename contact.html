@@ -25,25 +25,36 @@
             <img src="./img/map.png" alt="map">
         </div>
         <div class="right_content">
-            <p>
             <address>
                 <strong>Ole K&ouml;ster</strong><br>
                 Neuenfelder Stra&szlig;e 84a<br>
                 21109 Hamburg
             </address>
-            </p>
-            <p>
-            <address class="tel_mail">
-                <div class="contact_icons">
-                    <img src="./img/call.svg" alt="phone" class="icon">
-                    <img src="./img/email.svg" alt="email" class="icon">
+            <div class="contact_phone">
+                <img src="./img/call.svg" alt="phone" class="icon">
+                <a href="tel:+4915221870658">+49 1522 1870658</a>
+            </div>
+            <div class="contact_email">
+                <img src="./img/email.svg" alt="email" class="icon">
+                <a href="mailto:mail@ole-koester.de">mail@ole-koester.de</a>
+            </div>
+            <form id="message_form">
+                <label for="email">Your email:</label>
+                <!-- I need the space character in the placeholder below in styles.css
+                    for coloring the border red, if a user has not entered a valid email adress.
+                    Without the space character, the border would also be red after loading the page.-->
+                <input type="email" class="message" name="email" placeholder=" " required />
+                <label for="message">Your message:</label>
+                <textarea class="message" name="message" required></textarea>
+                <div id="message_button_container">
+                    <p class="message">
+                        You want to write me a message? Cool! fill out both fields above and I will reply to you
+                        as soon as
+                        possible.
+                    </p>
+                    <button class="message">Send</button>
                 </div>
-                <div class="contact_info">
-                    <a href="tel:+4915221870658">+49 1522 1870658</a>
-                    <a href="mailto:mail@ole-koester.de">mail@ole-koester.de</a>
-                </div>
-            </address>
-            </p>
+            </form>
         </div>
     </main>
     <footer>

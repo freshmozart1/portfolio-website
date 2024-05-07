@@ -7,14 +7,27 @@
     background-color: #24252a;
     color: #edf0f1;
     font-family: 'Montserrat', sans-serif;
-}
-
-li,
-a,
-button {
+    text-decoration: none;
     font-weight: 500;
     font-size: 16px;
-    text-decoration: none;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 24px;
+    /* 1.5-times the font-size of p */
+}
+
+p {
+    margin-bottom: 1.5em;
+}
+
+strong,
+th {
+    font-weight: 700;
 }
 
 header {
@@ -42,7 +55,7 @@ header {
 }
 
 .nav_links li a {
-    transition: all 0.3s ease 0s;
+    transition: color 0.3s ease;
 }
 
 .nav_links li a:hover {
@@ -55,7 +68,7 @@ button {
     border: none;
     border-radius: 50px;
     cursor: pointer;
-    transition: all 0.3s ease 0s;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
@@ -108,38 +121,99 @@ footer {
     height: 24px;
 }
 
-h1 {
-    line-height: 1.5;
-}
-
-small {
-    font-weight: 100;
-}
-
-p {
-    line-height: 1.2;
-    font-weight: 400;
+address {
+    font-style: normal;
     margin-bottom: 1.5em;
 }
 
-strong {
-    font-weight: 800;
-}
-
-address {
-    font-style: normal;
-}
-
-address.tel_mail {
+div.contact_phone,
+div.contact_email {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: left;
     column-gap: 6px;
 }
 
-address div.contact_icons,
-address div.contact_info {
+div.contact_email {
+    margin-bottom: 1.5em;
+}
+
+#message_form {
     display: flex;
     flex-direction: column;
-    row-gap: 6px;
+}
+
+input.message,
+textarea.message {
+    max-width: 25vw;
+    font-size: 16px;
+    border: 1px solid #edf0f1;
+    border-radius: 9px;
+    padding: 9px;
+    margin-bottom: 1.5em;
+}
+
+input.message:invalid:not(:placeholder-shown) {
+    border-color: red;
+}
+
+button.message {
+    max-width: 25vw;
+    background-color: #24252a;
+    border: 1px solid #edf0f1;
+}
+
+button.message:hover {
+    border-color: #24252a;
+    background-color: #edf0f1ac;
+    color: #24252a;
+}
+
+#message_button_container {
+    display: grid;
+}
+
+#message_button_container button {
+    grid-row: 1;
+    grid-column: 1;
+    opacity: 0;
+    z-index: 1;
+}
+
+#message_button_container p {
+    grid-row: 1;
+    grid-column: 1;
+    opacity: 1;
+    z-index: 0;
+}
+
+#message_form:focus-within:valid #message_button_container button {
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
+}
+
+#message_form:focus-within:invalid #message_button_container button {
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+#message_form:focus-within:valid #message_button_container p {
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+#message_form:focus-within:invalid #message_button_container p {
+    transition: opacity 0.3s ease;
+    opacity: 1;
+}
+
+table.career {
+    text-align: left;
+}
+
+table.career tbody::after {
+    content: '';
+    display: block;
+    margin-bottom: 1.5em;
 }
