@@ -1,11 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+/*I defined some color variables here to make it easier to change the color scheme of the website. */
+:root {
+    --background: #24252a;
+    --textcolor: #edf0f1;
+    --buttoncolor: rgba(0, 136, 169, 1);
+    --linkhover: #0088a9;
+    --buttonhover: rgba(0, 136, 169, 0.8);
+    --invalidinput: #ff0000;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: #24252a;
-    color: #edf0f1;
+    background-color: var(--background);
+    color: var(--textcolor);
     font-family: 'Montserrat', sans-serif;
     text-decoration: none;
     font-weight: 500;
@@ -60,12 +70,12 @@ header {
 
 .nav_links li a:hover,
 .nav_links li a:focus {
-    color: #0088a9;
+    color: var(--linkhover);
 }
 
 button {
     padding: 9px 25px;
-    background-color: rgba(0, 136, 169, 1);
+    background-color: var(--buttoncolor);
     border: none;
     border-radius: 50px;
     cursor: pointer;
@@ -74,7 +84,7 @@ button {
 
 button:hover,
 button:focus {
-    background-color: rgba(0, 136, 169, 0.8);
+    background-color: var(--buttonhover);
 }
 
 main {
@@ -150,26 +160,26 @@ input.message,
 textarea.message {
     max-width: 25vw;
     font-size: 16px;
-    border: 1px solid #edf0f1;
+    border: 1px solid var(--textcolor);
     border-radius: 9px;
     padding: 9px;
     margin-bottom: 1.5em;
 }
 
 input.message:invalid:not(:placeholder-shown) {
-    border-color: red;
+    border-color: var(--invalidinput);
 }
 
 button.message {
     max-width: 25vw;
-    background-color: #24252a;
-    border: 1px solid #edf0f1;
+    background-color: var(--background);
+    border: 1px solid var(--textcolor);
 }
 
 button.message:hover {
-    border-color: #24252a;
-    background-color: #edf0f1ac;
-    color: #24252a;
+    border-color: var(--background);
+    background-color: var(--textcolor);
+    color: var(--background);
 }
 
 #message_button_container {
