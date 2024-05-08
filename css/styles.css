@@ -58,7 +58,8 @@ header {
     transition: color 0.3s ease;
 }
 
-.nav_links li a:hover {
+.nav_links li a:hover,
+.nav_links li a:focus {
     color: #0088a9;
 }
 
@@ -71,7 +72,8 @@ button {
     transition: background-color 0.3s ease;
 }
 
-button:hover {
+button:hover,
+button:focus {
     background-color: rgba(0, 136, 169, 0.8);
 }
 
