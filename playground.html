@@ -1,70 +1,23 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playground</title>
+    <link rel="stylesheet" href="./css/playground_styles.css">
+</head>
 
 <body>
-    <style>
-        /* Container for label and input using grid layout */
-        .email-container {
-            display: grid;
-        }
+    <header>
+    </header>
+    <main>
+        <section>
+        </section>
+    </main>
 
-        .email-label {
-            grid-area: 1 / 1 / 2 / 2;
-            /* Position label in the same grid cell as the input */
-            position: relative;
-        }
-
-        .label-valid,
-        .label-invalid {
-            position: absolute;
-            width: 100%;
-            transition: opacity 0.3s ease;
-        }
-
-        .label-valid {
-            z-index: 2;
-            /* Initially on top */
-            opacity: 1;
-            /* Fully visible initially */
-        }
-
-        .label-invalid {
-            z-index: 1;
-            /* Initially behind */
-            opacity: 0;
-            /* Fully transparent initially */
-        }
-
-        input[type="email"] {
-            grid-area: 1 / 1 / 2 / 2;
-            /* Same grid cell as label */
-            z-index: 3;
-            /* Input is always on top */
-        }
-
-        /* Adjusting z-index and opacity based on input validity */
-        input[type="email"]:invalid:not(:placeholder-shown)+.email-label .label-valid {
-            z-index: 1;
-            /* Move behind when invalid */
-            opacity: 0;
-            /* Transition to transparent */
-        }
-
-        input[type="email"]:invalid:not(:placeholder-shown)+.email-label .label-invalid {
-            z-index: 2;
-            /* Bring to front when invalid */
-            opacity: 1;
-            /* Transition to visible */
-        }
-    </style>
-    <form>
-        <div class="email-container">
-            <label for="emailInput" class="email-label">
-                <span class="label-valid">Your email</span>
-                <span class="label-invalid">Enter a valid email address</span>
-            </label>
-            <input type="email" id="emailInput" placeholder="Enter your email">
-        </div>
-    </form>
+    <footer>
+    </footer>
 </body>
 
 </html>
