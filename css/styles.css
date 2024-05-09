@@ -1,5 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
 /*I defined some color variables here to make it easier to change the color scheme of the website. */
 :root {
     --background: #24252a;
@@ -168,6 +189,30 @@ textarea.message {
 
 input.message:invalid:not(:placeholder-shown) {
     border-color: var(--invalidinput);
+}
+
+#message_form {
+    width: 25vw;
+}
+
+#email_label {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+#email_label span {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#valid_email_label {
+    opacity: 1;
+}
+
+#invalid_email_label {
+    color: var(--invalidinput);
+    opacity: 0;
 }
 
 button.message {

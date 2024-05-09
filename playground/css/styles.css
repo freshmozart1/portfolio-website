@@ -28,4 +28,5 @@
 
 #invalid_email_label {
     opacity: 0;
+    color: red;
 }
