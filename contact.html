@@ -40,11 +40,14 @@
                 <a href="mailto:mail@ole-koester.de">mail@ole-koester.de</a>
             </div>
             <form id="message_form">
-                <label for="email">Your email:</label>
+                <label for="email" class="email_label">
+                    <span class="email_valid">Your email:</span>
+                    <span class="email_invalid">Please enter a valid email address.</span>
+                </label>
                 <!-- I need the space character in the placeholder below in styles.css
                     for coloring the border red, if a user has not entered a valid email adress.
                     Without the space character, the border would also be red after loading the page.-->
-                <input type="email" class="message" name="email" placeholder=" " required />
+                <input type="email" id="email_input" class="message" name="email" placeholder=" " required />
                 <label for="message">Your message:</label>
                 <textarea class="message" name="message" required></textarea>
                 <div id="message_button_container">
