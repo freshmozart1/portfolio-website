@@ -225,7 +225,6 @@ button.message {
 button.message:hover {
     border-color: var(--background);
     background-color: var(--buttonhover);
-    color: var(--background);
 }
 
 #message_button_container {
