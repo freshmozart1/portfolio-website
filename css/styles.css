@@ -23,12 +23,12 @@
 
 /*I defined some color variables here to make it easier to change the color scheme of the website. */
 :root {
-    --background: #24252a;
-    --textcolor: #edf0f1;
-    --buttoncolor: rgba(0, 136, 169, 1);
-    --linkhover: #0088a9;
-    --buttonhover: rgba(0, 136, 169, 0.8);
-    --invalidinput: #ff0000;
+    --background: #a0967d;
+    --textcolor: #f9efd5;
+    --buttoncolor: #afa793;
+    --linkhover: #afa793;
+    --buttonhover: #c3bdae;
+    --invalidinput: #995252;
 }
 
 * {
@@ -188,6 +188,7 @@ textarea.message {
 }
 
 input.message:invalid:not(:placeholder-shown) {
+    color: var(--invalidinput);
     border-color: var(--invalidinput);
 }
 
@@ -223,7 +224,7 @@ button.message {
 
 button.message:hover {
     border-color: var(--background);
-    background-color: var(--textcolor);
+    background-color: var(--buttonhover);
     color: var(--background);
 }
 
