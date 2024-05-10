@@ -70,11 +70,10 @@ header {
     height: 145px;
 }
 
-.logo {
+#logo {
     cursor: pointer;
-    margin-right: auto;
-    width: 100px;
-    height: 100px;
+    width: 145px;
+    height: 145px;
 }
 
 nav {
