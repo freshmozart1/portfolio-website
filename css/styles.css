@@ -64,10 +64,10 @@ th {
 
 header {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
-    padding: 30px 30px 15px 30px;
     height: 145px;
+    margin: 30px;
 }
 
 #logo {
@@ -77,12 +77,15 @@ header {
 }
 
 nav {
-    flex-basis: 25vw;
+    flex-basis: calc(50vw - 30px);
 }
 
-.nav_links li {
-    display: inline-block;
-    padding: 0px 20px;
+nav ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .nav_links li a {
@@ -111,32 +114,28 @@ button:focus {
 main {
     display: flex;
     flex-direction: row;
-    padding: 15px 30px 15px 30px;
+    margin: 30px;
 }
 
 div.left_content {
-    height: calc(100vh - 290px);
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50vw;
-    padding-right: 15px;
+    flex-basis: 50vw;
 }
 
 .left_content img {
-    max-height: 100%;
-    max-width: 100%;
+    width: calc(100vh - 289px);
+    height: calc(100vh - 289px);
     object-fit: contain;
     border-radius: 50%;
 }
 
 div.right_content {
     display: flex;
-    align-items: left;
     justify-content: center;
     flex-direction: column;
-    width: 50vw;
-    padding-left: 15px;
+    flex-basis: 50vw;
 }
 
 footer {
@@ -144,9 +143,8 @@ footer {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 6px;
-    padding: 15px 30px 0px 30px;
-    height: 115px;
+    margin: 30px;
+    height: 24px;
 }
 
 .icon {
