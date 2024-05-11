@@ -272,3 +272,33 @@ table.career tbody::after {
     display: block;
     margin-bottom: 1.5em;
 }
+
+#grid_content {
+    display: grid;
+    height: calc(100vh - 289px);
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 30px;
+}
+
+#grid_content div {
+    width: calc(50vw - 45px);
+    display: flex;
+    flex-direction: row;
+}
+
+#grid_content div.grid_image_container {
+    width: 100%;
+    height: 100%;
+    background-color: yellow;
+    margin-right: 15px;
+}
+
+#grid_content div.grid_text_container {
+    margin-left: 15px;
+    width: 100%;
+    height: 100%;
+    background-color: green;
+    display: flex;
+    flex-direction: column;
+}
