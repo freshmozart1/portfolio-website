@@ -283,10 +283,10 @@ table.career tbody::after {
 
 #grid_content div.grid_image_container, #grid_content div.grid_text_container {
     width: calc(25vw - 75px);
+    height: calc(50vh - 159px);
 }
 
 #grid_content div.grid_image_container img {
     width: 100%;
     border-radius: 50px;
-    object-fit: fill;
 }
