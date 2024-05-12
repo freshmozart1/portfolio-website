@@ -284,16 +284,27 @@ table.career tbody::after {
     width: calc(25vw - 75px);
     height: calc(50vh - 159px);
     display: flex;
-    flex-direction: row;
-    justify-content:space-between;
-    
 }
 
 #grid_content div.grid_text_container {
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items:flex-start;
     min-height: 115px;
     min-width: 200px;
+}
+
+#grid_content div.grid_image_container {
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+#grid_content div.grid_text_container:nth-child(2n-1) {
+    align-items: flex-end;
+}
+
+#grid_content div.grid_image_container:nth-child(2n-1) {
+    justify-content: flex-end;
 }
 
 #grid_content div.grid_image_container img {
