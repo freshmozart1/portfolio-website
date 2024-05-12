@@ -145,7 +145,7 @@ footer {
     align-items: center;
     margin: 30px;
     height: 24px;
-}
+    }
 
 .icon {
     width: 24px;
@@ -275,7 +275,6 @@ table.career tbody::after {
 
 #grid_content {
     display: grid;
-    height: calc(100vh - 289px);
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 30px;
@@ -284,9 +283,23 @@ table.career tbody::after {
 #grid_content div.grid_image_container, #grid_content div.grid_text_container {
     width: calc(25vw - 75px);
     height: calc(50vh - 159px);
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    
+}
+
+#grid_content div.grid_text_container {
+    flex-direction: column;
+    justify-content: space-evenly;
+    min-height: 115px;
+    min-width: 200px;
 }
 
 #grid_content div.grid_image_container img {
-    width: 100%;
+    width: calc(50vh - 159px);
+    height: calc(50vh - 159px);
+    min-width: 100px;
+    min-height: 100px;
     border-radius: 50px;
 }
