@@ -76,6 +76,12 @@ header {
     height: 145px;
 }
 
+@media screen and (max-width: 335px) {
+    #logo {
+        display: none;
+    }
+}
+
 nav {
     flex-basis: calc(50vw - 30px);
 }
@@ -86,6 +92,20 @@ nav ul {
     flex-wrap: nowrap;
     align-items: center;
     justify-content: space-between;
+}
+
+@media screen and (max-width: 680px) {
+    nav {
+        flex-basis: 100vw;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li a {
+        line-height: 2.25;
+    }
 }
 
 .nav_links li a {
@@ -115,6 +135,11 @@ main {
     display: flex;
     flex-direction: row;
     margin: 30px;
+}
+@media screen and (max-width: 780px) {
+    main {
+        flex-direction: column;
+    }
 }
 
 div.left_content {
