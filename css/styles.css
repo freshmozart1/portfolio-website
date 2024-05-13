@@ -86,7 +86,7 @@ nav {
     flex-basis: calc(50vw - 30px);
 }
 
-nav ul {
+ul.nav_links {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -99,21 +99,21 @@ nav ul {
         flex-basis: 100vw;
     }
 
-    nav ul {
+    ul.nav_links {
         flex-direction: column;
     }
 
-    nav ul li a {
+    ul.nav_links li a {
         line-height: 2.25;
     }
 }
 
-.nav_links li a {
+ul.nav_links li a {
     transition: color 0.3s ease;
 }
 
-.nav_links li a:hover,
-.nav_links li a:focus {
+ul.nav_links li a:hover,
+ul.nav_links li a:focus {
     color: var(--linkhover);
 }
 
