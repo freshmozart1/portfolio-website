@@ -76,11 +76,17 @@ header {
     height: 145px;
 }
 
+@media screen and (max-width: 335px) {
+    #logo {
+        display: none;
+    }
+}
+
 nav {
     flex-basis: calc(50vw - 30px);
 }
 
-nav ul {
+ul.nav_links {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -88,12 +94,26 @@ nav ul {
     justify-content: space-between;
 }
 
-.nav_links li a {
+@media screen and (max-width: 680px) {
+    nav {
+        flex-basis: 100vw;
+    }
+
+    ul.nav_links {
+        flex-direction: column;
+    }
+
+    ul.nav_links li a {
+        line-height: 2.25;
+    }
+}
+
+ul.nav_links li a {
     transition: color 0.3s ease;
 }
 
-.nav_links li a:hover,
-.nav_links li a:focus {
+ul.nav_links li a:hover,
+ul.nav_links li a:focus {
     color: var(--linkhover);
 }
 
@@ -116,17 +136,30 @@ main {
     flex-direction: row;
     margin: 30px;
 }
+@media screen and (max-width: 780px) {
+    main {
+        flex-direction: column;
+    }
+}
 
 div.left_content {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-basis: 50vw;
+    padding-right: 15px;
+    margin: 30px;
+}
+
+@media screen and (max-width: 780px) {
+    div.left_content {
+        padding-right: 0;
+    }
 }
 
 .left_content img {
-    width: calc(100vh - 289px);
-    height: calc(100vh - 289px);
+    max-width: calc(100vh - 289px);
+    max-height: calc(100vh - 289px);
     object-fit: contain;
     border-radius: 50%;
 }
@@ -136,6 +169,16 @@ div.right_content {
     justify-content: center;
     flex-direction: column;
     flex-basis: 50vw;
+    padding-left: 15px;
+    margin: 30px;
+}
+
+@media screen and (max-width: 780px) {
+    div.right_content {
+        padding-left: 0;
+        align-items: center;
+        flex-basis: 100%;
+    }
 }
 
 footer {
@@ -185,6 +228,14 @@ textarea.message {
     margin-bottom: 1.5em;
 }
 
+@media screen and (max-width: 780px) {
+    input.message,
+    textarea.message {
+        max-width: 100%;
+    }
+}
+
+
 input.message:invalid:not(:placeholder-shown) {
     color: var(--invalidinput);
     border-color: var(--invalidinput);
@@ -192,6 +243,13 @@ input.message:invalid:not(:placeholder-shown) {
 
 #message_form {
     width: 25vw;
+}
+
+@media screen and (max-width: 780px) {
+    #message_form {
+        margin: 30px;
+        width: 66vw;
+    }
 }
 
 #email_label {
@@ -218,6 +276,12 @@ button.message {
     max-width: 25vw;
     background-color: var(--background);
     border: 1px solid var(--textcolor);
+}
+
+@media screen and (max-width: 780px) {
+    button.message {
+        max-width: 100%;
+    }
 }
 
 button.message:hover {
@@ -263,14 +327,32 @@ button.message:hover {
     opacity: 1;
 }
 
-table.career {
+#career_table {
     text-align: left;
 }
 
-table.career tbody::after {
+#career_table tbody::after {
     content: '';
     display: block;
     margin-bottom: 1.5em;
+}
+
+#small_career_table {
+    text-align: left;
+    display: none;
+}
+
+@media screen and (max-width: 335px) {
+    #career_table {
+        display: none;
+    }
+
+    #small_career_table {
+        display: table;
+    }
+    #small_career_table tbody tr:nth-child(3n) td {
+        padding-bottom: 1.5em;
+    }
 }
 
 #grid_content {
@@ -280,18 +362,42 @@ table.career tbody::after {
     gap: 30px;
 }
 
+@media screen and (max-width: 760px) {
+    #grid_content {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    #grid_content {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    #grid_content {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+}
+
 #grid_content div.grid_image_container, #grid_content div.grid_text_container {
-    width: calc(25vw - 75px);
-    height: calc(50vh - 159px);
     display: flex;
+}
+
+@media screen and (max-width: 460px) {
+    #grid_content div.grid_image_container {
+        display: none;
+    }
+    
 }
 
 #grid_content div.grid_text_container {
     flex-direction: column;
     justify-content: center;
     align-items:flex-start;
-    min-height: 115px;
-    min-width: 200px;
 }
 
 #grid_content div.grid_image_container {
@@ -303,8 +409,19 @@ table.career tbody::after {
     align-items: flex-end;
 }
 
-#grid_content div.grid_image_container:nth-child(2n-1) {
+#grid_content div.grid_image_container:nth-child(2n) {
     justify-content: flex-end;
+}
+
+@media screen and (max-width: 760px) {
+    #grid_content div.grid_image_container {
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    #grid_content div.grid_image_container:nth-child(2n) {
+        justify-content: flex-start;
+    }
 }
 
 #grid_content div.grid_image_container img {
