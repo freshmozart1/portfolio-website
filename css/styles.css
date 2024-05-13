@@ -353,7 +353,7 @@ button.message:hover {
     align-items: flex-end;
 }
 
-#grid_content div.grid_image_container:nth-child(2n-1) {
+#grid_content div.grid_image_container:nth-child(2n) {
     justify-content: flex-end;
 }
 
