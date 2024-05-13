@@ -323,6 +323,13 @@ button.message:hover {
     gap: 30px;
 }
 
+@media screen and (max-width: 760px) {
+    #grid_content {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+}
+
 #grid_content div.grid_image_container, #grid_content div.grid_text_container {
     width: calc(25vw - 75px);
     height: calc(50vh - 159px);
