@@ -147,11 +147,19 @@ div.left_content {
     justify-content: center;
     align-items: center;
     flex-basis: 50vw;
+    padding-right: 15px;
+    margin: 30px;
+}
+
+@media screen and (max-width: 780px) {
+    div.left_content {
+        padding-right: 0;
+    }
 }
 
 .left_content img {
-    width: calc(100vh - 289px);
-    height: calc(100vh - 289px);
+    max-width: calc(100vh - 289px);
+    max-height: calc(100vh - 289px);
     object-fit: contain;
     border-radius: 50%;
 }
@@ -161,6 +169,16 @@ div.right_content {
     justify-content: center;
     flex-direction: column;
     flex-basis: 50vw;
+    padding-left: 15px;
+    margin: 30px;
+}
+
+@media screen and (max-width: 780px) {
+    div.right_content {
+        padding-left: 0;
+        align-items: center;
+        flex-basis: 100%;
+    }
 }
 
 footer {
@@ -210,6 +228,14 @@ textarea.message {
     margin-bottom: 1.5em;
 }
 
+@media screen and (max-width: 780px) {
+    input.message,
+    textarea.message {
+        max-width: 100%;
+    }
+}
+
+
 input.message:invalid:not(:placeholder-shown) {
     color: var(--invalidinput);
     border-color: var(--invalidinput);
@@ -217,6 +243,13 @@ input.message:invalid:not(:placeholder-shown) {
 
 #message_form {
     width: 25vw;
+}
+
+@media screen and (max-width: 780px) {
+    #message_form {
+        margin: 30px;
+        width: 66vw;
+    }
 }
 
 #email_label {
@@ -243,6 +276,12 @@ button.message {
     max-width: 25vw;
     background-color: var(--background);
     border: 1px solid var(--textcolor);
+}
+
+@media screen and (max-width: 780px) {
+    button.message {
+        max-width: 100%;
+    }
 }
 
 button.message:hover {
@@ -330,18 +369,35 @@ button.message:hover {
     }
 }
 
+@media screen and (max-width: 460px) {
+    #grid_content {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    #grid_content {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+}
+
 #grid_content div.grid_image_container, #grid_content div.grid_text_container {
-    width: calc(25vw - 75px);
-    height: calc(50vh - 159px);
     display: flex;
+}
+
+@media screen and (max-width: 460px) {
+    #grid_content div.grid_image_container {
+        display: none;
+    }
+    
 }
 
 #grid_content div.grid_text_container {
     flex-direction: column;
     justify-content: center;
     align-items:flex-start;
-    min-height: 115px;
-    min-width: 200px;
 }
 
 #grid_content div.grid_image_container {
@@ -355,6 +411,17 @@ button.message:hover {
 
 #grid_content div.grid_image_container:nth-child(2n) {
     justify-content: flex-end;
+}
+
+@media screen and (max-width: 760px) {
+    #grid_content div.grid_image_container {
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    #grid_content div.grid_image_container:nth-child(2n) {
+        justify-content: flex-start;
+    }
 }
 
 #grid_content div.grid_image_container img {
