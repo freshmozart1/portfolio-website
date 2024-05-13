@@ -288,14 +288,32 @@ button.message:hover {
     opacity: 1;
 }
 
-table.career {
+#career_table {
     text-align: left;
 }
 
-table.career tbody::after {
+#career_table tbody::after {
     content: '';
     display: block;
     margin-bottom: 1.5em;
+}
+
+#small_career_table {
+    text-align: left;
+    display: none;
+}
+
+@media screen and (max-width: 335px) {
+    #career_table {
+        display: none;
+    }
+
+    #small_career_table {
+        display: table;
+    }
+    #small_career_table tbody tr:nth-child(3n) td {
+        padding-bottom: 1.5em;
+    }
 }
 
 #grid_content {
