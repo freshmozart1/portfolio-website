@@ -90,7 +90,6 @@ ul.nav_links {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    align-items: center;
     justify-content: space-between;
 }
 
@@ -108,6 +107,17 @@ ul.nav_links {
     }
 }
 
+ul.nav_links li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+ul.nav_links li a {
+    display: flex;
+    align-items: center;
+}
+
 ul.nav_links li a {
     transition: color 0.3s ease;
 }
@@ -117,13 +127,30 @@ ul.nav_links li a:focus {
     color: var(--linkhover);
 }
 
+ul.nav_links li a svg {
+    transition: transform 0.3s ease, fill 0.3s ease, margin-right 0.3s ease;
+}
+
+ul.nav_links li a:hover svg {
+    transform: rotate(45deg);
+    fill: var(--linkhover);
+    margin-right: 12px;
+}
+
 button {
     padding: 9px 25px;
     background-color: var(--buttoncolor);
     border: none;
     border-radius: 50px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
     transition: background-color 0.3s ease;
+}
+
+button * {
+    fill: var(--textcolor);
+    background-color: inherit;
 }
 
 button:hover,
@@ -135,6 +162,7 @@ main {
     display: flex;
     flex-direction: row;
     margin: 30px;
+    height: calc(100vh - 289px);
 }
 @media screen and (max-width: 780px) {
     main {
@@ -193,6 +221,9 @@ footer {
 .icon {
     width: 24px;
     height: 24px;
+    fill: var(--textcolor);
+    margin-left: 6px;
+    margin-right: 6px;
 }
 
 address {
