@@ -162,7 +162,7 @@ main {
     display: flex;
     flex-direction: row;
     margin: 30px;
-    height: calc(100vh - 289px);
+    min-height: calc(100vh - 289px);
 }
 @media screen and (max-width: 780px) {
     main {
@@ -186,8 +186,8 @@ div.left_content {
 }
 
 .left_content img {
-    max-width: calc(100vh - 289px);
-    max-height: calc(100vh - 289px);
+    max-width: 50vh;
+    max-height: 50vh;
     object-fit: contain;
     border-radius: 50%;
 }
