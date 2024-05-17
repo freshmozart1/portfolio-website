@@ -93,13 +93,10 @@ ul.nav_links {
     justify-content: space-between;
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 1015px) {
     nav {
-        flex-basis: 100vw;
-    }
-
-    ul.nav_links {
-        flex-direction: column;
+        margin-left: 30px;
+        flex-basis: calc(100vw - 235px);
     }
 
     ul.nav_links li a {
