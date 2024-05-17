@@ -29,6 +29,7 @@
     --linkhover: #afa793;
     --buttonhover: #c3bdae;
     --invalidinput: #995252;
+    --standardMargin: 30px;
 }
 
 * {
@@ -67,7 +68,7 @@ header {
     justify-content: space-between;
     align-items: center;
     height: 145px;
-    margin: 30px;
+    margin: var(--standardMargin);
 }
 
 #logo {
@@ -76,14 +77,14 @@ header {
     height: 145px;
 }
 
-@media screen and (max-width: 335px) {
+@media screen and (max-width: 400px) {
     #logo {
         display: none;
     }
 }
 
 nav {
-    flex-basis: calc(50vw - 30px);
+    flex-basis: calc(50vw - var(--standardMargin));
 }
 
 ul.nav_links {
@@ -95,14 +96,14 @@ ul.nav_links {
 
 @media screen and (max-width: 1015px) {
     nav {
-        margin-left: 30px;
-        flex-basis: calc(100vw - 235px);
+        margin-left: var(--standardMargin);
+        flex-basis: calc(100vw - 3 * var(--standardMargin) - 145px);
     }
 }
 
 @media screen and (max-width: 685px) {
     nav {
-        margin-left: 30px;
+        margin-left: var(--standardMargin);
     }
 
     ul.nav_links {
@@ -110,8 +111,22 @@ ul.nav_links {
         align-items: flex-end;
     }
 
+    ul.nav_links li:nth-child(-n + 3) {
+        margin-right: 25px;
+    }
+
     ul.nav_links li a {
         line-height: 2.25em;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    nav {
+        flex-basis: calc(100vw - 2 * var(--standardMargin));
+    }
+    
+    ul.nav_links {
+        align-items: center;
     }
 }
 
@@ -169,7 +184,7 @@ button:focus {
 main {
     display: flex;
     flex-direction: row;
-    margin: 30px;
+    margin: var(--standardMargin);
     min-height: calc(100vh - 289px);
 }
 @media screen and (max-width: 780px) {
@@ -184,7 +199,7 @@ div.left_content {
     align-items: center;
     flex-basis: 50vw;
     padding-right: 15px;
-    margin: 30px;
+    margin: var(--standardMargin);
 }
 
 @media screen and (max-width: 780px) {
@@ -206,7 +221,7 @@ div.right_content {
     flex-direction: column;
     flex-basis: 50vw;
     padding-left: 15px;
-    margin: 30px;
+    margin: var(--standardMargin);
 }
 
 @media screen and (max-width: 780px) {
@@ -222,7 +237,7 @@ footer {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 30px;
+    margin: var(--standardMargin);
     height: 24px;
     }
 
@@ -286,7 +301,7 @@ input.message:invalid:not(:placeholder-shown) {
 
 @media screen and (max-width: 780px) {
     #message_form {
-        margin: 30px;
+        margin: var(--standardMargin);
         width: 66vw;
     }
 }
