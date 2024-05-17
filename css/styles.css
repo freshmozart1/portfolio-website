@@ -98,9 +98,20 @@ ul.nav_links {
         margin-left: 30px;
         flex-basis: calc(100vw - 235px);
     }
+}
+
+@media screen and (max-width: 685px) {
+    nav {
+        margin-left: 30px;
+    }
+
+    ul.nav_links {
+        flex-direction: column;
+        align-items: flex-end;
+    }
 
     ul.nav_links li a {
-        line-height: 2.25;
+        line-height: 2.25em;
     }
 }
 
