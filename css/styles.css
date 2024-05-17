@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+@keyframes moveBoat {
+    0% {
+        offset-distance: 0%;
+    }
+
+    100% {
+        offset-distance: 100%;
+    }
+}
 
 @keyframes fade-in {
     from {
@@ -30,6 +39,8 @@
     --buttonhover: #c3bdae;
     --invalidinput: #995252;
     --standardMargin: 30px;
+    --standardFontSize: 16px;
+    --logoSize: 145px;
 }
 
 * {
@@ -41,21 +52,16 @@
     font-family: 'Montserrat', sans-serif;
     text-decoration: none;
     font-weight: 500;
-    font-size: 16px;
+    font-size: var(--standardFontSize);
     line-height: 1.2;
     list-style: none;
 }
 
 h1 {
-    font-size: 32px;
+    font-size: calc(2 * var(--standardFontSize));
     font-weight: 700;
     line-height: 1.5;
-    margin-bottom: 24px;
-    /* 1.5-times the font-size of p */
-}
-
-p {
-    margin-bottom: 1.5em;
+    margin-bottom: calc(1.5 * var(--standardFontSize));
 }
 
 strong,
@@ -67,14 +73,14 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 145px;
+    height: var(--logoSize);
     margin: var(--standardMargin);
 }
 
 #logo {
     cursor: pointer;
-    width: 145px;
-    height: 145px;
+    width: var(--logoSize);
+    height: var(--logoSize);
 }
 
 @media screen and (max-width: 400px) {
@@ -97,7 +103,7 @@ ul.nav_links {
 @media screen and (max-width: 1015px) {
     nav {
         margin-left: var(--standardMargin);
-        flex-basis: calc(100vw - 3 * var(--standardMargin) - 145px);
+        flex-basis: calc(100vw - 3 * var(--standardMargin) - var(--logoSize));
     }
 }
 
@@ -185,7 +191,7 @@ main {
     display: flex;
     flex-direction: row;
     margin: var(--standardMargin);
-    min-height: calc(100vh - 289px);
+    min-height: calc(100vh - 1.5 * var(--standardFontSize) - 4 * var(--standardMargin) - var(--logoSize));
 }
 @media screen and (max-width: 780px) {
     main {
@@ -198,13 +204,13 @@ div.left_content {
     justify-content: center;
     align-items: center;
     flex-basis: 50vw;
-    padding-right: 15px;
-    margin: var(--standardMargin);
+    margin-right: calc(var(--standardMargin) / 2);
 }
 
 @media screen and (max-width: 780px) {
     div.left_content {
-        padding-right: 0;
+        margin-right: 0;
+        flex-basis: 100%;
     }
 }
 
@@ -220,13 +226,12 @@ div.right_content {
     justify-content: center;
     flex-direction: column;
     flex-basis: 50vw;
-    padding-left: 15px;
-    margin: var(--standardMargin);
+    margin-left: calc(var(--standardMargin) / 2);
 }
 
 @media screen and (max-width: 780px) {
     div.right_content {
-        padding-left: 0;
+        margin-left: 0;
         align-items: center;
         flex-basis: 100%;
     }
@@ -238,15 +243,15 @@ footer {
     justify-content: center;
     align-items: center;
     margin: var(--standardMargin);
-    height: 24px;
+    height: calc(1.5 * var(--standardFontSize));
     }
 
 .icon {
-    width: 24px;
-    height: 24px;
+    width: calc(1.5 * var(--standardFontSize));
+    height: calc(1.5 * var(--standardFontSize));
     fill: var(--textcolor);
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: calc(1.5 * var(--standardFontSize) / 4);
+    margin-right: calc(1.5 * var(--standardFontSize) / 4);
 }
 
 address {
@@ -260,7 +265,7 @@ div.contact_email {
     flex-direction: row;
     align-items: center;
     justify-content: left;
-    column-gap: 6px;
+    column-gap: calc(1.5 * var(--standardFontSize) / 4);
 }
 
 div.contact_email {
@@ -275,7 +280,7 @@ div.contact_email {
 input.message,
 textarea.message {
     max-width: 25vw;
-    font-size: 16px;
+    font-size: var(--standardFontSize);
     border: 1px solid var(--textcolor);
     border-radius: 9px;
     padding: 9px;
@@ -413,7 +418,7 @@ button.message:hover {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    gap: 30px;
+    gap: var(--standardMargin);
 }
 
 @media screen and (max-width: 760px) {
@@ -479,21 +484,11 @@ button.message:hover {
 }
 
 #grid_content div.grid_image_container img {
-    width: calc(50vh - 159px);
-    height: calc(50vh - 159px);
+    width: calc(50vh - 2.5 * var(--standardMargin) - 0.75 * var(--standardFontSize) - var(--logoSize) / 2);
+    height: calc(50vh - 2.5 * var(--standardMargin) - 0.75 * var(--standardFontSize) - var(--logoSize) / 2);
     min-width: 100px;
     min-height: 100px;
     border-radius: 50px;
-}
-
-@keyframes moveBoat {
-    0% {
-        offset-distance: 0%;
-    }
-
-    100% {
-        offset-distance: 100%;
-    }
 }
 
 #boat_overlay svg {
