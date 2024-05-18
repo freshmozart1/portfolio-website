@@ -39,6 +39,7 @@
     --buttonhover: #c3bdae;
     --invalidinput: #995252;
     --standardMargin: 30px;
+    --standardMarginBottom: 1.5em;
     --standardFontSize: 16px;
     --logoSize: 145px;
 }
@@ -256,7 +257,7 @@ footer {
 
 address {
     font-style: normal;
-    margin-bottom: 1.5em;
+    margin-bottom: var(--standardMarginBottom);
 }
 
 div.contact_phone,
@@ -269,7 +270,7 @@ div.contact_email {
 }
 
 div.contact_email {
-    margin-bottom: 1.5em;
+    margin-bottom: var(--standardMarginBottom);
 }
 
 #message_form {
@@ -284,7 +285,7 @@ textarea.message {
     border: 1px solid var(--textcolor);
     border-radius: 9px;
     padding: 9px;
-    margin-bottom: 1.5em;
+    margin-bottom: var(--standardMarginBottom);
 }
 
 @media screen and (max-width: 780px) {
@@ -393,7 +394,7 @@ button.message:hover {
 #career_table tbody::after {
     content: '';
     display: block;
-    margin-bottom: 1.5em;
+    margin-bottom: var(--standardMarginBottom);
 }
 
 #small_career_table {
