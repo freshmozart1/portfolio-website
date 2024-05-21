@@ -167,24 +167,26 @@ ul.nav_links li a:hover svg {
     margin-right: 12px;
 }
 
-button {
+button,
+ul.nav_links li:last-of-type a {
     padding: 9px 25px;
     background-color: var(--buttoncolor);
     border: none;
     border-radius: 50px;
     cursor: pointer;
-    display: flex;
-    align-items: center;
     transition: background-color 0.3s ease;
 }
 
-button * {
+button *,
+ul.nav_links li:last-of-type a * {
     fill: var(--textcolor);
     background-color: inherit;
 }
 
 button:hover,
-button:focus {
+button:focus,
+ul.nav_links li:last-of-type a:hover,
+ul.nav_links li:last-of-type a:focus {
     background-color: var(--buttonhover);
 }
 
