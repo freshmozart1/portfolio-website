@@ -216,8 +216,9 @@ div.right_content {
 }
 
 .left_content img {
-    max-width: 50vh;
-    max-height: 50vh;
+    width: 100%;
+    max-width: calc(100vh - 1.5 * var(--standardFontSize) - 4 * var(--standardMargin) - var(--logoSize));
+    max-height: calc(100vh - 1.5 * var(--standardFontSize) - 4 * var(--standardMargin) - var(--logoSize));
     object-fit: contain;
     border-radius: 50%;
 }
