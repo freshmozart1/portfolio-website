@@ -211,6 +211,7 @@ div.right_content {
 @media screen and (max-width: 780px) {
     div.left_content {
         margin-right: 0;
+        align-items: center;
         flex-basis: 100%;
     }
 }
