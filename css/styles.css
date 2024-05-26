@@ -84,7 +84,6 @@ ul.nav_links li a {
     display: flex;
     flex-direction: row;
     align-items: center;
-    flex-direction: row;
     flex-wrap: nowrap;
 }
 
@@ -337,41 +336,6 @@ div.contact_email,
     border-radius: 50px;
 }
 
-@media screen and (max-width: 335px) {
-    #career_table {
-        display: none;
-    }
-
-    #small_career_table {
-        display: table;
-    }
-
-    #small_career_table tbody tr:nth-child(3n) td {
-        padding-bottom: 1.5em;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    #logo {
-        display: none;
-    }
-
-    nav {
-        flex-basis: calc(100vw - 2 * var(--standardMargin));
-    }
-
-    ul.nav_links {
-        align-items: center;
-    }
-}
-
-@media screen and (max-width: 420px) {
-    #grid_content {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
-    }
-}
-
 @media screen and (max-width: 685px) {
     nav {
         margin-left: var(--standardMargin);
@@ -446,3 +410,35 @@ div.contact_email,
     }
 }
 
+@media screen and (max-width: 420px) {
+
+    /* 4:20 <3 */
+    #logo {
+        display: none;
+    }
+
+    nav {
+        flex-basis: calc(100vw - 2 * var(--standardMargin));
+    }
+
+    ul.nav_links {
+        align-items: center;
+    }
+
+    #career_table {
+        display: none;
+    }
+
+    #small_career_table {
+        display: table;
+    }
+
+    #small_career_table tbody tr:nth-child(3n) td {
+        padding-bottom: 1.5em;
+    }
+
+    #grid_content {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+}
