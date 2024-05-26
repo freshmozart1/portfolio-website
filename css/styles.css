@@ -445,14 +445,3 @@ div.contact_email,
         grid-template-rows: 1fr 1fr 1fr 1fr;
     }
 }
-
-@media screen and (max-width: 760px) {
-    #grid_content div.grid_image_container {
-        align-items: center;
-        justify-content: flex-end;
-    }
-
-    #grid_content div.grid_image_container:nth-child(2n) {
-        justify-content: flex-start;
-    }
-}
