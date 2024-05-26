@@ -337,10 +337,38 @@ div.contact_email,
     border-radius: 50px;
 }
 
-@media screen and (max-width: 1015px) {
+@media screen and (max-width: 335px) {
+    #career_table {
+        display: none;
+    }
+
+    #small_career_table {
+        display: table;
+    }
+
+    #small_career_table tbody tr:nth-child(3n) td {
+        padding-bottom: 1.5em;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #logo {
+        display: none;
+    }
+
     nav {
-        margin-left: var(--standardMargin);
-        flex-basis: calc(100vw - 3 * var(--standardMargin) - var(--logoSize));
+        flex-basis: calc(100vw - 2 * var(--standardMargin));
+    }
+
+    ul.nav_links {
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    #grid_content {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
     }
 }
 
@@ -360,20 +388,6 @@ div.contact_email,
 
     ul.nav_links li a {
         line-height: 2.25em;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    #logo {
-        display: none;
-    }
-
-    nav {
-        flex-basis: calc(100vw - 2 * var(--standardMargin));
-    }
-
-    ul.nav_links {
-        align-items: center;
     }
 }
 
@@ -418,17 +432,10 @@ div.contact_email,
     }
 }
 
-@media screen and (max-width: 335px) {
-    #career_table {
-        display: none;
-    }
-
-    #small_career_table {
-        display: table;
-    }
-
-    #small_career_table tbody tr:nth-child(3n) td {
-        padding-bottom: 1.5em;
+@media screen and (max-width: 1015px) {
+    nav {
+        margin-left: var(--standardMargin);
+        flex-basis: calc(100vw - 3 * var(--standardMargin) - var(--logoSize));
     }
 }
 
@@ -439,9 +446,3 @@ div.contact_email,
     }
 }
 
-@media screen and (max-width: 420px) {
-    #grid_content {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
-    }
-}
