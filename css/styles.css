@@ -381,41 +381,40 @@ div.contact_email,
     main {
         flex-direction: column;
     }
-}
 
-@media screen and (max-width: 780px) {
     div.left_content {
         margin-right: 0;
         align-items: center;
         flex-basis: 100%;
     }
-}
 
-@media screen and (max-width: 780px) {
     div.right_content {
         margin-left: 0;
         align-items: center;
         flex-basis: 100%;
     }
-}
 
-@media screen and (max-width: 780px) {
     input.message,
     textarea.message {
         max-width: 100%;
     }
-}
 
-@media screen and (max-width: 780px) {
     #message_form {
         margin: var(--standardMargin);
         width: 66vw;
     }
-}
 
-@media screen and (max-width: 780px) {
     button.message {
         max-width: 100vw;
+    }
+
+    #grid_content {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    #grid_content div.grid_image_container {
+        display: none;
     }
 }
 
@@ -445,18 +444,6 @@ div.contact_email,
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr;
     }
-}
-
-@media screen and (max-width: 780px) {
-    #grid_content {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-    }
-
-    #grid_content div.grid_image_container {
-        display: none;
-    }
-
 }
 
 @media screen and (max-width: 760px) {
