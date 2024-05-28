@@ -16,8 +16,8 @@ body {
 }
 
 main.slider {
-    width: 100vw;
-    min-height: calc(100vh - 8em - 2px); /* 5em for the header and 2px for the headers border */
+    width: 100svw;
+    min-height: calc(100svh - 8em - 2px); /* 5em for the header and 2px for the headers border */
     overflow-x: scroll;
     white-space: nowrap;
     scroll-snap-type: x mandatory;
@@ -27,8 +27,8 @@ main.slider {
     display: inline-flex;
     flex-flow: column wrap;
     align-items: center;
-    width: 100vw;
-    min-height: calc(100vh - 8em - 2px); /* 5em for the header and 2px for the headers border */
+    width: 100svw;
+    min-height: calc(100svh - 8em - 2px); /* 5em for the header and 2px for the headers border */
     scroll-snap-align: start;
     white-space: normal;
     vertical-align: top; /* This is needed to align the divs to the top of the slider and it took me half an hour of my lifetime to find this property...*/
@@ -73,7 +73,7 @@ menu.nav_links li a span {
 
 #profile_picture {
     width: calc(100% - 2em);
-    max-width: calc(50vh - 4em - 1px);
+    max-width: calc(50svh - 4em - 1px);
     margin: 0 1em;
     aspect-ratio: 1/1;
     border-radius: 1em;
