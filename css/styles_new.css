@@ -1,11 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-    --background: #a0967d;
-    --textcolor: #f9efd5;
-    --buttoncolor: #afa793;
-    --linkhover: #afa793;
-    --buttonhover: #c3bdae;
+    --background: #F4F2F3;
+    --textcolor: #64766A;
     --invalidinput: #995252;
     --standardFontSize: 16px;
     --logoSize: 145px;
@@ -20,20 +17,24 @@ body {
 
 main.slider {
     width: 100vw;
-    height: calc(100vh - 3em - var(--standardFontSize));
+    min-height: calc(100vh - 8em - 2px); /* 5em for the header and 2px for the headers border */
     overflow-x: scroll;
     white-space: nowrap;
     scroll-snap-type: x mandatory;
 }
 
 .slider div {
-    display: inline-block;
+    display: inline-flex;
+    flex-flow: column wrap;
+    align-items: center;
     width: 100vw;
-    height: calc(100vh - 3em - var(--standardFontSize));
+    min-height: calc(100vh - 8em - 2px); /* 5em for the header and 2px for the headers border */
     scroll-snap-align: start;
     white-space: normal;
+    vertical-align: top; /* This is needed to align the divs to the top of the slider and it took me half an hour of my lifetime to find this property...*/
 }
 
+/*I don't like the logo, so I will not display it untill I have one that I like.*/
 #logo {
     width: var(--logoSize);
     height: var(--logoSize);
@@ -43,6 +44,8 @@ main.slider {
 .icon {
     width: var(--standardFontSize);
     height: var(--standardFontSize);
+    fill: var(--textcolor);
+    background-size: var(--standardFontSize);
 }
 
 menu.nav_links {
@@ -52,22 +55,55 @@ menu.nav_links {
     justify-content: space-around;
     gap: 1em;
     list-style-type: none;
-    margin: 1em 0;
+    margin: 1em;
     padding: 0;
+    border: 1px solid var(--textcolor);
+    border-radius: 1em;
 }
 
 menu.nav_links li a {
     display: flex;
     justify-content: center;
-    padding: 0.5em;
-    background-color: red;
-    border-radius: 25%;
-    fill: var(--textcolor);
-    background-color: var(--buttoncolor);
+    padding: 1em;
 }
 
 menu.nav_links li a span {
     display: none;
+}
+
+#profile_picture {
+    width: calc(100% - 2em);
+    max-width: calc(50vh - 4em - 1px);
+    margin: 0 1em;
+    aspect-ratio: 1/1;
+    border-radius: 1em;
+}
+
+#home h1 {
+    transform: translateY(-2em);
+    color: var(--background);
+}
+
+#home p {
+    transform: translateY(-2em);
+    margin: 1em;
+    font-weight: 300;
+}
+
+footer {
+    display: flex;
+    flex: 1;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    margin: 1em;
+    padding: 0;
+    max-height: 1em;
+    overflow: hidden;
+}
+
+footer a { /*somehow a tags get a line-height of 20px when they aren't flex elements. This results in cropped icons.*/
+    display: flex;
 }
 
 /* 
