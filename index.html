@@ -77,9 +77,113 @@
                 I look forward to the opportunity to work with you.
             </p>
         </div>
-        <div id="about">About</div>
-        <div id="projects">Projects</div>
-        <div id="contact">Contact</div>
+        <div id="about">
+            <table id="career_table">
+                <tbody>
+                    <tr>
+                        <td>04.2024 - now</td>
+                    </tr>
+                    <tr>
+                        <th scope="col" colspan="2">Full-Stack Web Developer</th>
+                    </tr>
+                    <tr>
+                        <td>Job preparation course @ <a href="https://careerfoundry.com/">CareerFoundry.com</a></td>
+                    </tr>
+                    <tr>
+                        <td>10.2019 - 02.2024</td>
+                    </tr>
+                    <tr>
+                        <th scope="col" colspan="2">Driver</th>
+                    </tr>
+                    <tr>
+                        <td>Moia Operations Germany GmbH</td>
+                    </tr>
+                    <tr>
+                        <td>11.2018 - 06.2019</td>
+                    </tr>
+                    <tr>
+                        <th scope="col" colspan="2">Developer front- and backend</th>
+                    </tr>
+                    <tr>
+                        <td>webf&ouml;rsterei</td>
+                    </tr>
+                    <tr>
+                        <td>08.2016 - 11.2018</td>
+                    </tr>
+                    <tr>
+                        <th scope="col" colspan="2">Service-Driver</th>
+                    </tr>
+                    <tr>
+                        <td>Deutsche Bahn Connect GmbH</td>
+                    </tr>
+                    <tr>
+                        <td>03.2012 - 04.2012</td>
+                    </tr>
+                    <tr>
+                        <th scope="col" colspan="2">Internship First-Level-Support</th>
+                    </tr>
+                    <tr>
+                        <td>Wolfgang Schmidt GmbH</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="projects">
+            <div id="projects_container">
+                <img src="./img/app_project_image_placeholder.webp" alt="Picture showing project 1">
+                <h1>Project 1</h1>
+                <p>project_1_description</p>
+                <img src="./img/app_project_image_placeholder.webp" alt="Picture showing project 2">
+                <h1>Project 2</h1>
+                <p>project_2_description</p>
+                <img src="./img/app_project_image_placeholder.webp" alt="Picture showing project 3">
+                <h1>Project 3</h1>
+                <p>project_3_description</p>
+                <img src="./img/app_project_image_placeholder.webp" alt="Picture showing project 4">
+                <h1>Project 4</h1>
+                <p>project_4_description</p>
+            </div>
+        </div>
+        <div id="contact">
+            <address>
+                <strong>Ole K&ouml;ster</strong><br>
+                Neuenfelder Stra&szlig;e 84a<br>
+                21109 Hamburg
+            </address>
+            <table>
+                <tbody>
+                    <tr>
+                        <td><img src="./img/call.svg" alt="phone" class="icon"></td>
+                        <td><a href="tel:+4915221870658">+49 1522 1870658</a></td>
+                    </tr>
+                    <tr>
+                        <td><img src="./img/email.svg" alt="email" class="icon"></td>
+                        <td><a href="mailto:mail@ole-koester.de">mail@ole-koester.de</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <form id="message_form">
+                <label for="email_input" id="email_label">
+                    <span id="valid_email_label">Your email:</span>
+                    <span id="invalid_email_label">Please enter a valid email address.</span>
+                </label>
+                <!-- I need the space character in the placeholder below in styles.css
+                                for coloring the border red, if a user has not entered a valid email adress.
+                                Without the space character, the border would also be red after loading the page.-->
+                <input type="email" id="email_input" class="message" name="email-input" placeholder=" "
+                    onfocus="animateLabelSwitch('email_input','valid_email_label','invalid_email_label');" required />
+                <label for="message">Your message:</label>
+                <textarea class="message" name="message" required></textarea>
+                <div id="message_button_container">
+                    <p class="message">
+                        You want to write me a message? Cool! fill out both fields above and I will reply to you
+                        as soon as
+                        possible.
+                    </p>
+                    <button class="message">Send</button>
+                </div>
+            </form>
+        </div>
     </main>
     <footer>
         <a href="#">
