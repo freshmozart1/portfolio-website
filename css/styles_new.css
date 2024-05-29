@@ -30,7 +30,7 @@ main.slider {
     align-items: center;
     justify-content: space-around;
     width: 100svw;
-    height: calc(var(--windowHeight) - 8em - 2px); /* 5em for the header and 2px for the headers border */
+    min-height: calc(var(--windowHeight) - 8em - 2px); /* 5em for the header and 2px for the headers border */
     scroll-snap-align: start;
     white-space: normal;
     vertical-align: top; /* This is needed to align the divs to the top of the slider and it took me half an hour of my lifetime to find this property...*/
@@ -39,7 +39,7 @@ main.slider {
 #projects_container {
     display: flex;
     flex-flow: row wrap;
-    height: calc(var(--windowHeight) - 8em - 2px);
+    min-height: calc(var(--windowHeight) - 8em - 2px);
     overflow-y: scroll;
     margin: 0 1em;
     gap: 1em;
