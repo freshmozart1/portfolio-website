@@ -162,6 +162,22 @@ menu.nav_links li a span {
     display: none;
 }
 
+#message_button_container > button {
+    border: 1px solid var(--background);
+    border-radius: 1em;
+    padding: 0.5em;
+    color: var(--background);
+    background-color: var(--textcolor);
+    cursor: pointer;
+    transition: border-color 0.5s ease, background-color 0.5s ease, color 0.5s ease;
+}
+
+#message_button_container > button:hover {
+    border: 1px solid var(--textcolor);
+    background-color: var(--background);
+    color: var(--textcolor);
+}
+
 footer {
     display: flex;
     flex: 1;
