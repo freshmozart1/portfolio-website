@@ -145,31 +145,76 @@ menu.nav_links li a span {
     align-items: center;
 }
 
+#email_label {
+    display: grid;
+    text-align: center;
+}
+
+#valid_email_label, #invalid_email_label {
+    grid-column: 1;
+    grid-row: 1;
+    transition: opacity 0.5s ease;
+}
+
+#valid_email_label {
+    opacity: 1;
+    color: var(--textcolor);
+    z-index: 1;
+}
+
 #invalid_email_label {
-    display: none;
+    opacity: 0;
     color: var(--invalidinput);
+    z-index: 0;
 }
 
 #contact input[type="email"], #contact textarea {
+    box-sizing: border-box;
     border: 1px solid var(--textcolor);
     border-radius: 1em;
     padding: 0.5em;
     margin-bottom: 1em;
-    max-width: 600px;
+    width: 250px;
 }
 
-#message_button_container > p {
-    display: none;
+#contact textarea:disabled {
+    background-color: var(--background);
+    resize: none;
+}
+
+#contact textarea:enabled {
+    background-color: white;
+    resize: both;
+}
+
+#message_button_container {
+    width: 250px;
+    display: grid;
+}
+
+#message_button_container > button, #message_button_container > span {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#message_button_container > span {
+    opacity: 1;
+    text-align: center;
+    z-index: 1;
+    transition: opacity 0.5s ease;
 }
 
 #message_button_container > button {
+    opacity: 0;
+    height: 3em;
+    z-index: 0;
     border: 1px solid var(--background);
     border-radius: 1em;
     padding: 0.5em;
     color: var(--background);
     background-color: var(--textcolor);
     cursor: pointer;
-    transition: border-color 0.5s ease, background-color 0.5s ease, color 0.5s ease;
+    transition: border-color 0.5s ease, background-color 0.5s ease, color 0.5s ease, opacity 0.5s ease;
 }
 
 #message_button_container > button:hover {

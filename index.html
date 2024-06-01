@@ -167,20 +167,16 @@
                     <span id="valid_email_label">Your email:</span>
                     <span id="invalid_email_label">Please enter a valid email address.</span>
                 </label>
-                <!-- I need the space character in the placeholder below in styles.css
-                                for coloring the border red, if a user has not entered a valid email adress.
-                                Without the space character, the border would also be red after loading the page.-->
-                <input type="email" id="email_input" class="message" name="email-input" placeholder=" "
-                    onfocus="animateLabelSwitch('email_input','valid_email_label','invalid_email_label');" required />
+                <input type="email" id="email_input" class="message" name="email-input" required />
                 <label for="message">Your message:</label>
-                <textarea class="message" name="message" required></textarea>
+                <textarea class="message" name="message" required disabled></textarea>
                 <div id="message_button_container">
-                    <p class="message">
+                    <span>
                         You want to write me a message? Cool! fill out both fields above and I will reply to you
                         as soon as
                         possible.
-                    </p>
-                    <button type="button" class="message"><!--TODO: Change the button type to submit-->
+                    </span>
+                    <button type="button" disabled><!--TODO: Change the button type to submit-->
                         Send
                     </button>
                 </div>
@@ -195,6 +191,7 @@
 </body>
 
 <script src="./js/isiOs.js"></script>
+<script src="./js/messageForm.js"></script>
 <script>
     //alert(window.innerHeight + 'px x ' + window.innerWidth + 'px');
 </script>
