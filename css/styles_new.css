@@ -20,6 +20,16 @@ header, main, footer {
     margin: 1em;
 }
 
+h1 {
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    margin-block-start: 0.4em;
+    margin-block-end: 0.4em;
+}
+
 main.slider, main.slider > div, #projects_container {
     height: calc(var(--windowHeight) - 8em - 2px); /* 5em for the header and 2px for the headers border */
 }
@@ -35,7 +45,7 @@ main.slider {
     display: inline-flex;
     flex-flow: column wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     width: calc(100svw - 2em);
     scroll-snap-align: start;
     white-space: normal;
@@ -94,9 +104,15 @@ menu.nav_links li a span {
     display: none;
 }
 
+#home > p {
+    display: inline-block;
+    vertical-align: top;
+    text-align: start;
+}
+
 #home img {
-    width: calc(100% - 2em);
-    max-width: calc(var(--windowHeight) / 2 - 4em - 1px);
+    display: block;
+    max-width: 45%;
     aspect-ratio: 1/1;
     border-radius: 1em;
 }
@@ -126,6 +142,24 @@ menu.nav_links li a span {
 #contact form {
     display: flex;
     flex-flow: column nowrap;
+    align-items: center;
+}
+
+#invalid_email_label {
+    display: none;
+    color: var(--invalidinput);
+}
+
+#contact input[type="email"], #contact textarea {
+    border: 1px solid var(--textcolor);
+    border-radius: 1em;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    max-width: 600px;
+}
+
+#message_button_container > p {
+    display: none;
 }
 
 footer {
