@@ -5,13 +5,10 @@
     --textcolor: #64766A;
     --invalidinput: #995252;
     --standardFontSize: 16px;
-    --logoSize: 145px;
-    --windowHeight: 100svh;
 }
 
 body {
     font-family: 'Montserrat', sans-serif;
-    color: var(--textcolor);
     font-size: var(--standardFontSize);
 }
 
@@ -31,7 +28,7 @@ h1 {
 
 main.slider, main.slider > div, #projects_container {
     width: calc(100svw - 2em);
-    height: calc(var(--windowHeight) - 8em - 2px); /* 5em for the header and 2px for the headers border */
+    height: calc(100svh - 8em - 2px); /* 5em for the header, 3em for the footer and 2px for the headers border */
 }
 
 main.slider {
@@ -57,7 +54,6 @@ main.slider {
     width: var(--standardFontSize);
     height: var(--standardFontSize);
     fill: var(--textcolor);
-    background-size: var(--standardFontSize);
 }
 
 menu.nav_links {
@@ -201,6 +197,7 @@ footer {
     overflow: hidden;
 }
 
+body,
 #message_button_container>button:hover,
 #valid_email_label,
 #about table a,
