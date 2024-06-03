@@ -1,99 +1,282 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-@keyframes fade-in {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes fade-out {
-    from {
-        opacity: 1;
-    }
-
-    to {
-        opacity: 0;
-    }
-}
-
-/*I defined some color variables here to make it easier to change the color scheme of the website. */
 :root {
-    --background: #a0967d;
-    --textcolor: #f9efd5;
-    --buttoncolor: #afa793;
-    --linkhover: #afa793;
-    --buttonhover: #c3bdae;
+    --background: #F4F2F3;
+    --textcolor: #64766A;
     --invalidinput: #995252;
-    --standardMargin: 30px;
     --standardFontSize: 16px;
     --logoSize: 145px;
+    --windowHeight: 100svh;
 }
 
 body {
-    width: 100vw;
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    font-family: 'Montserrat', sans-serif;
     background-color: var(--background);
     color: var(--textcolor);
-    font-family: 'Montserrat', sans-serif;
-    text-decoration: none;
-    font-weight: 500;
     font-size: var(--standardFontSize);
-    line-height: 1.2;
-    list-style: none;
+}
+
+header, main, footer {
+    margin: 1em;
 }
 
 h1 {
-    font-size: calc(2 * var(--standardFontSize));
-    line-height: 1.5;
-    margin-bottom: calc(1.5 * var(--standardFontSize));
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    margin-block-start: 0.4em;
+    margin-block-end: 0.4em;
 }
 
-strong,
-th,
-h1 {
-    font-weight: 700;
+main.slider, main.slider > div, #projects_container {
+    height: calc(var(--windowHeight) - 8em - 2px); /* 5em for the header and 2px for the headers border */
 }
 
-header {
-    display: flex;
+main.slider {
+    width: calc(100svw - 2em);
+    overflow-x: scroll;
+    white-space: nowrap;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+
+.slider > div {
+    margin: 0 1em;
+    display: inline-flex;
+    flex-flow: column wrap;
     align-items: center;
-    margin: var(--standardMargin);
+    justify-content: space-evenly;
+    width: calc(100svw - 2em);
+    scroll-snap-align: start;
+    white-space: normal;
+    vertical-align: top; /* This is needed to align the divs to the top of the slider and it took me half an hour of my lifetime to find this property...*/
 }
 
-#logo,
-header {
+/*I don't like the logo, so I will not display it untill I have one that I like.*/
+#logo {
+    width: var(--logoSize);
     height: var(--logoSize);
+    display: none;
 }
 
-nav {
-    flex-basis: calc(50vw - var(--standardMargin));
+.icon {
+    width: var(--standardFontSize);
+    height: var(--standardFontSize);
+    fill: var(--textcolor);
+    background-size: var(--standardFontSize);
 }
 
-ul.nav_links,
-ul.nav_links li,
+menu.nav_links {
+    display: flex;
+    flex: 1;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    gap: 1em;
+    list-style-type: none;
+    padding: 0;
+    border: 1px solid var(--textcolor);
+    border-radius: 1em;
+}
+
+menu.nav_links li {
+    cursor: pointer;
+}
+
+menu.nav_links li a {
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+}
+
+menu.nav_links li a span {
+    display: none;
+}
+
+#home > p {
+    display: inline-block;
+    vertical-align: top;
+    text-align: start;
+}
+
+#home img {
+    display: block;
+    max-width: 45%;
+    aspect-ratio: 1/1;
+    border-radius: 1em;
+}
+
+#home p {
+    font-weight: 300;
+}
+
+#about table, #contact table {
+    text-align: center;
+    vertical-align: middle;
+}
+
+#contact table {
+    text-align: left;
+}
+
+#about table a, #contact table a {
+    color: var(--textcolor);
+    text-decoration: none;
+}
+
+#about table tbody tr:nth-child(3n) td {
+    padding-bottom: 1em;
+}
+
+#projects_container {
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#projects_container > div > img {
+    border-radius: 1em;
+    max-width: calc(50% - 1em);
+    aspect-ratio: 1/1;
+}
+
+#projects_container > div {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    column-gap: 1em;
+}
+
+#contact form {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+#email_label {
+    display: grid;
+    text-align: center;
+}
+
+#valid_email_label, #invalid_email_label {
+    grid-column: 1;
+    grid-row: 1;
+    transition: opacity 0.5s ease;
+}
+
+#valid_email_label {
+    opacity: 1;
+    color: var(--textcolor);
+    z-index: 1;
+}
+
+#invalid_email_label {
+    opacity: 0;
+    color: var(--invalidinput);
+    z-index: 0;
+}
+
+#contact input[type="email"], #contact textarea {
+    box-sizing: border-box;
+    border: 1px solid var(--textcolor);
+    border-radius: 1em;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    width: 250px;
+}
+
+#contact textarea:disabled {
+    background-color: var(--background);
+    resize: none;
+}
+
+#contact textarea:enabled {
+    background-color: white;
+    resize: both;
+}
+
+#message_button_container {
+    width: 250px;
+    display: grid;
+}
+
+#message_button_container > button, #message_button_container > span {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#message_button_container > span {
+    opacity: 1;
+    text-align: center;
+    z-index: 1;
+    transition: opacity 0.5s ease;
+}
+
+#message_button_container > button {
+    opacity: 0;
+    height: 3em;
+    z-index: 0;
+    border: 1px solid var(--background);
+    border-radius: 1em;
+    padding: 0.5em;
+    color: var(--background);
+    background-color: var(--textcolor);
+    cursor: pointer;
+    transition: border-color 0.5s ease, background-color 0.5s ease, color 0.5s ease, opacity 0.5s ease;
+}
+
+#message_button_container > button:hover {
+    border: 1px solid var(--textcolor);
+    background-color: var(--background);
+    color: var(--textcolor);
+}
+
+footer {
+    display: flex;
+    flex: 1;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    max-height: 1em;
+    overflow: hidden;
+}
+
+footer a { /*somehow a tags get a line-height of 20px when they aren't flex elements. This results in cropped icons.*/
+    display: flex;
+}
+
+/* 
+
+a {
+    color: var(--textcolor);
+    text-decoration: none;
+}
+
+ul.nav_links {
+    display: flex;
+    flex: 1;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    gap: 8px;
+    list-style-type: none;
+    margin: 1em 0;
+    padding: 0;
+}
+
 ul.nav_links li a {
     display: flex;
-    flex-direction: row;
+    flex: 0 0 auto;
+    flex-flow: row nowrap;
     align-items: center;
-    flex-wrap: nowrap;
-}
-
-header,
-ul.nav_links {
-    justify-content: space-between;
-}
-
-ul.nav_links li a {
+    column-gap: 8px;
+    white-space: nowrap;
     transition: color 0.3s ease;
+}
+
+ul.nav_links li a svg {
+    transition: transform 0.3s ease, fill 0.3s ease;
 }
 
 ul.nav_links li a:hover,
@@ -101,344 +284,12 @@ ul.nav_links li a:focus {
     color: var(--linkhover);
 }
 
-ul.nav_links li a svg {
-    transition: transform 0.3s ease, fill 0.3s ease, margin-right 0.3s ease;
-}
-
 ul.nav_links li a:hover svg {
     transform: rotate(45deg);
     fill: var(--linkhover);
-    margin-right: 12px;
 }
 
-button,
-ul.nav_links li:last-of-type a {
-    padding: 9px 25px;
-    background-color: var(--buttoncolor);
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button *,
-.icon,
-ul.nav_links li:last-of-type a * {
-    fill: var(--textcolor);
-    background-color: inherit;
-}
-
-button:hover,
-button:focus,
-ul.nav_links li:last-of-type a:hover,
-ul.nav_links li:last-of-type a:focus {
-    background-color: var(--buttonhover);
-}
-
-main,
-footer {
-    display: flex;
-    flex-direction: row;
-    margin: var(--standardMargin);
-}
-
-main {
-    min-height: calc(100vh - 1.5 * var(--standardFontSize) - 4 * var(--standardMargin) - var(--logoSize));
-}
-
-div.left_content,
-div.right_content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-basis: 50vw;
-    margin-left: calc(var(--standardMargin) / 2);
-    flex-direction: column;
-}
-
-.left_content img {
+#profile_picture {
     width: 100%;
-    max-width: calc(100vh - 1.5 * var(--standardFontSize) - 4 * var(--standardMargin) - var(--logoSize));
-    max-height: calc(100vh - 1.5 * var(--standardFontSize) - 4 * var(--standardMargin) - var(--logoSize));
-    object-fit: contain;
-    border-radius: 50%;
-}
-
-div.right_content {
-    align-items: flex-start;
-}
-
-footer {
-    justify-content: center;
-    align-items: center;
-    height: calc(1.5 * var(--standardFontSize));
-}
-
-.icon {
-    width: calc(1.5 * var(--standardFontSize));
-    height: calc(1.5 * var(--standardFontSize));
-    margin-left: calc(1.5 * var(--standardFontSize) / 4);
-    margin-right: calc(1.5 * var(--standardFontSize) / 4);
-}
-
-address {
-    font-style: normal;
-}
-
-div.contact_phone,
-div.contact_email {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: left;
-    column-gap: calc(1.5 * var(--standardFontSize) / 4);
-}
-
-#message_form {
-    display: flex;
-    flex-direction: column;
-}
-
-input.message,
-textarea.message {
-    max-width: 25vw;
-    font-size: var(--standardFontSize);
-    border: 1px solid var(--textcolor);
-    border-radius: 9px;
-    padding: 9px;
-}
-
-#invalid_email_label,
-input.message:invalid:not(:placeholder-shown) {
-    color: var(--invalidinput);
-    border-color: var(--invalidinput);
-}
-
-#message_form {
-    width: 25vw;
-}
-
-#email_label,
-#message_button_container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-}
-
-button.message {
-    max-width: 25vw;
-    background-color: var(--background);
-    border: 1px solid var(--textcolor);
-}
-
-button.message:hover {
-    border-color: var(--background);
-    background-color: var(--buttonhover);
-}
-
-#email_label span,
-#message_button_container button,
-#message_button_container p {
-    grid-row: 1;
-    grid-column: 1;
-}
-
-#message_button_container button {
-    z-index: 1;
-}
-
-#message_button_container p {
-    z-index: 0;
-}
-
-#valid_email_label,
-#message_button_container p,
-#message_form:focus-within:valid #message_button_container button,
-#message_form:focus-within:invalid #message_button_container p {
-    opacity: 1;
-}
-
-#invalid_email_label,
-#message_button_container button,
-#message_form:focus-within:invalid #message_button_container button,
-#message_form:focus-within:valid #message_button_container p {
-    opacity: 0;
-}
-
-#message_form:focus-within:invalid #message_button_container button,
-#message_form:focus-within:valid #message_button_container button {
-    transition: background-color 0.3s ease, opacity 0.3s ease;
-}
-
-#message_form:focus-within:invalid #message_button_container p,
-#message_form:focus-within:valid #message_button_container p {
-    transition: opacity 0.3s ease;
-}
-
-#small_career_table,
-#career_table {
-    text-align: left;
-}
-
-#career_table tbody::after {
-    content: '';
-    display: block;
-}
-
-address,
-input.message,
-textarea.message,
-div.contact_email,
-#career_table tbody::after {
-    margin-bottom: 1.5em;
-}
-
-#small_career_table {
-    display: none;
-}
-
-#grid_content {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: var(--standardMargin);
-}
-
-#grid_content div.grid_image_container,
-#grid_content div.grid_text_container {
-    display: flex;
-}
-
-#grid_content div.grid_text_container {
-    flex-direction: column;
-    justify-content: center;
-    align-items:flex-start;
-}
-
-#grid_content div.grid_image_container {
-    flex-direction: row;
-    justify-content: flex-start;
-}
-
-#grid_content div.grid_text_container:nth-child(2n-1) {
-    align-items: flex-end;
-}
-
-#grid_content div.grid_image_container:nth-child(2n) {
-    justify-content: flex-end;
-}
-
-#grid_content div.grid_image_container img {
-    width: calc(50vh - 2.5 * var(--standardMargin) - 0.75 * var(--standardFontSize) - var(--logoSize) / 2);
-    height: calc(50vh - 2.5 * var(--standardMargin) - 0.75 * var(--standardFontSize) - var(--logoSize) / 2);
-    min-width: 100px;
-    min-height: 100px;
-    border-radius: 50px;
-}
-
-@media screen and (max-width: 685px) {
-    nav {
-        margin-left: var(--standardMargin);
-    }
-
-    ul.nav_links {
-        flex-direction: column;
-        align-items: flex-end;
-    }
-
-    ul.nav_links li:nth-child(-n + 3) {
-        margin-right: 25px;
-    }
-
-    ul.nav_links li a {
-        line-height: 2.25em;
-    }
-}
-
-@media screen and (max-width: 780px) {
-    main {
-        flex-direction: column;
-    }
-
-    div.left_content {
-        margin-right: 0;
-        align-items: center;
-        flex-basis: 100%;
-    }
-
-    div.right_content {
-        margin-left: 0;
-        align-items: center;
-        flex-basis: 100%;
-    }
-
-    input.message,
-    textarea.message {
-        max-width: 100%;
-    }
-
-    #message_form {
-        margin: var(--standardMargin);
-        width: 66vw;
-    }
-
-    button.message {
-        max-width: 100vw;
-    }
-
-    #grid_content {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-    }
-
-    #grid_content div.grid_image_container {
-        display: none;
-    }
-}
-
-@media screen and (max-width: 1015px) {
-    nav {
-        margin-left: var(--standardMargin);
-        flex-basis: calc(100vw - 3 * var(--standardMargin) - var(--logoSize));
-    }
-}
-
-@media screen and (max-width: 1200px) {
-    #grid_content {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
-    }
-}
-
-@media screen and (max-width: 420px) {
-
-    /* 4:20 <3 */
-    #logo {
-        display: none;
-    }
-
-    nav {
-        flex-basis: calc(100vw - 2 * var(--standardMargin));
-    }
-
-    ul.nav_links {
-        align-items: center;
-    }
-
-    #career_table {
-        display: none;
-    }
-
-    #small_career_table {
-        display: table;
-    }
-
-    #small_career_table tbody tr:nth-child(3n) td {
-        padding-bottom: 1.5em;
-    }
-
-    #grid_content {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
-    }
-}
+    height: auto;
+}*/
