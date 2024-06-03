@@ -11,7 +11,6 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: var(--background);
     color: var(--textcolor);
     font-size: var(--standardFontSize);
 }
@@ -31,15 +30,16 @@ h1 {
 }
 
 main.slider, main.slider > div, #projects_container {
+    width: calc(100svw - 2em);
     height: calc(var(--windowHeight) - 8em - 2px); /* 5em for the header and 2px for the headers border */
 }
 
 main.slider {
-    width: calc(100svw - 2em);
     overflow-x: scroll;
     white-space: nowrap;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
+    overflow-y: hidden;
 }
 
 .slider > div {
@@ -48,7 +48,6 @@ main.slider {
     flex-flow: column wrap;
     align-items: center;
     justify-content: space-evenly;
-    width: calc(100svw - 2em);
     scroll-snap-align: start;
     white-space: normal;
     vertical-align: top; /* This is needed to align the divs to the top of the slider and it took me half an hour of my lifetime to find this property...*/
@@ -62,15 +61,12 @@ main.slider {
 }
 
 menu.nav_links {
-    display: flex;
     flex: 1;
     flex-flow: row nowrap;
     justify-content: space-around;
     gap: 1em;
     list-style-type: none;
     padding: 0;
-    border: 1px solid var(--textcolor);
-    border-radius: 1em;
 }
 
 menu.nav_links li {
@@ -78,13 +74,7 @@ menu.nav_links li {
 }
 
 menu.nav_links li a {
-    display: flex;
-    justify-content: center;
     padding: 1em;
-}
-
-menu.nav_links li a span {
-    display: none;
 }
 
 #home > p {
@@ -93,11 +83,10 @@ menu.nav_links li a span {
     text-align: start;
 }
 
-#home img {
-    display: block;
+#home img,
+#projects_container>div>img {
     max-width: 45%;
     aspect-ratio: 1/1;
-    border-radius: 1em;
 }
 
 #home p {
@@ -114,7 +103,6 @@ menu.nav_links li a span {
 }
 
 #about table a, #contact table a {
-    color: var(--textcolor);
     text-decoration: none;
 }
 
@@ -123,48 +111,42 @@ menu.nav_links li a span {
 }
 
 #projects_container {
-    display: inline-grid;
     grid-template-columns: 1fr 1fr;
-}
-
-#projects_container > div > img {
-    border-radius: 1em;
-    max-width: calc(50% - 1em);
-    aspect-ratio: 1/1;
+    overflow-y: scroll;
 }
 
 #projects_container > div {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
     justify-content: center;
     column-gap: 1em;
 }
 
-#contact form {
-    display: flex;
+#contact form,
+#projects_container>div {
     flex-flow: column nowrap;
     align-items: center;
 }
 
-#email_label {
+#email_label,
+#message_button_container,
+#projects_container {
     display: grid;
     text-align: center;
 }
 
-#valid_email_label, #invalid_email_label {
-    grid-column: 1;
-    grid-row: 1;
+#valid_email_label,
+#invalid_email_label,
+#message_button_container>span {
     transition: opacity 0.5s ease;
 }
 
-#valid_email_label {
+#valid_email_label,
+#message_button_container>span {
     opacity: 1;
-    color: var(--textcolor);
     z-index: 1;
 }
 
-#invalid_email_label {
+#invalid_email_label,
+#message_button_container>button {
     opacity: 0;
     color: var(--invalidinput);
     z-index: 0;
@@ -172,15 +154,11 @@ menu.nav_links li a span {
 
 #contact input[type="email"], #contact textarea {
     box-sizing: border-box;
-    border: 1px solid var(--textcolor);
-    border-radius: 1em;
     padding: 0.5em;
     margin-bottom: 1em;
-    width: 250px;
 }
 
 #contact textarea:disabled {
-    background-color: var(--background);
     resize: none;
 }
 
@@ -189,29 +167,23 @@ menu.nav_links li a span {
     resize: both;
 }
 
+#contact input[type="email"],
+#contact textarea,
 #message_button_container {
     width: 250px;
-    display: grid;
 }
 
-#message_button_container > button, #message_button_container > span {
+#message_button_container>button,
+#message_button_container>span,
+#valid_email_label,
+#invalid_email_label {
     grid-column: 1;
     grid-row: 1;
 }
 
-#message_button_container > span {
-    opacity: 1;
-    text-align: center;
-    z-index: 1;
-    transition: opacity 0.5s ease;
-}
-
 #message_button_container > button {
-    opacity: 0;
     height: 3em;
-    z-index: 0;
     border: 1px solid var(--background);
-    border-radius: 1em;
     padding: 0.5em;
     color: var(--background);
     background-color: var(--textcolor);
@@ -219,14 +191,7 @@ menu.nav_links li a span {
     transition: border-color 0.5s ease, background-color 0.5s ease, color 0.5s ease, opacity 0.5s ease;
 }
 
-#message_button_container > button:hover {
-    border: 1px solid var(--textcolor);
-    background-color: var(--background);
-    color: var(--textcolor);
-}
-
 footer {
-    display: flex;
     flex: 1;
     flex-flow: row nowrap;
     align-items: center;
@@ -236,6 +201,40 @@ footer {
     overflow: hidden;
 }
 
-footer a { /*somehow a tags get a line-height of 20px when they aren't flex elements. This results in cropped icons.*/
+#message_button_container>button:hover,
+#valid_email_label,
+#about table a,
+#contact table a {
+    color: var(--textcolor);
+}
+
+body,
+#contact textarea:disabled,
+#message_button_container>button:hover {
+    background-color: var(--background);
+}
+
+menu.nav_links,
+#contact input[type="email"],
+#contact textarea,
+#message_button_container>button:hover {
+    border: 1px solid var(--textcolor);
+}
+
+#message_button_container>button,
+#contact input[type="email"],
+#contact textarea,
+#projects_container>div>img,
+#home img,
+menu.nav_links {
+    border-radius: 1em;
+}
+
+footer,
+footer a,
+#contact form,
+#projects_container>div,
+menu.nav_links li a,
+menu.nav_links {
     display: flex;
 }
