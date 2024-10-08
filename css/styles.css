@@ -82,7 +82,7 @@ menu.nav_links li a {
 #home img,
 #projects_container>div>img {
     max-width: 45%;
-    aspect-ratio: 1/1;
+    /*aspect-ratio: 1/1;*/
 }
 
 #home p {
